@@ -1,3 +1,4 @@
+<!-- TODO: ASK WHY the 7 errors -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +6,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <a href = "high-scores.html"></a>
         <!-- CSS only -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
             integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -16,6 +18,7 @@
         <header>
             <h1>Javascript Quiz</h1>
             <div>
+<ul id="view-scores">View High-Scores </ul>
 
             </div>
         </header>
@@ -27,6 +30,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <section id="quiz-box">
+                        <h2 class = "my-score" id ="current-score"></h2>
                         <h3 id="questions"> Questions</h3>
                         <div class="d-grid gap-2">
                             <button class="btn btn-warning" id="option-1"> </button>
@@ -45,23 +49,13 @@
 
                 </div>
             </div>
-            <!-- <section id="quiz-box">
-                <h3 id="questions"> Questions</h3>
-                <div class="d-grid gap-2">
-                    <button class="btn btn-warning" id="option-1"> </button>
-                    <button class="btn btn-warning" id="option-2"> </button>
-                    <button class="btn btn-warning" id="option-3"> </button>
-                    <button class="btn btn-warning" id="option-4"> </button>
-                </div> -->
-            <!-- <br /> -->
-            <!-- <button id = "option-5"> </button>  -->
-            <!-- <p id="right-or-wrong"></p>
-            </section> -->
             <section id="final-score">
 
-                <h2 class="my-score" id="score-display"></h2 <label> Enter your initials.</label>
-                <input type="text" id="initials" placeholder="Enter your initials">
-                <button class="btn btn-success" id="saveUserScore" type="submit" onclick="saveHighScore(event)">Save
+                <h2 class="save-my-score" id="score">Score:</h2>
+                 <label> Initials:</label>
+                
+                    <input type="text" id="initials" placeholder="Enter your initials">
+                <button type="submit" class="btn btn-success" id="saveUserScore" onclick= "saveHighScores(event)">Save
                     User</button>
 
 

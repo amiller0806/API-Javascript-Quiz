@@ -39,7 +39,6 @@ var questionsDB = [
 
 
 
-
 var start = document.getElementById('start-quiz');
 var quizBox = document.getElementById('quiz-box');
 var quizQuestions = document.getElementById('questions');
@@ -48,20 +47,25 @@ var option1 = document.getElementById('option-1');
 var option2 = document.getElementById('option-2');
 var option3 = document.getElementById('option-3');
 var option4 = document.getElementById('option-4');
-// var option5 = document.getElementById('option-5');
+var option5 = document.getElementById('option-5');
 var timerEl = document.getElementById('timer');
 var instructions = document.getElementById('instructions');
+var myQuizScore = document.getElementById('quiz-score');
 var submitInitialsEl = document.querySelector('#btn btn-success');
-var scoreDisplay = document.getElementById('final-score');
+const scoreDisplay = document.getElementById('score');
+var finalScoreDisplay = document.getElementById('final-score');
+var currentScore = document.getElementById('current-score');
 var currentQuestion = 0;
 quizBox.style.display = 'none';
+finalScoreDisplay.style.display = 'none';
 scoreDisplay.style.display = 'none';
-var score = 0;
+let score = 0;
 
 var timerObject;
 var timerCount = questionsDB.length * 10;
 
-start.addEventListener("click", function (e) {
+start.addEventListener("click", function (event) {
+  score = 0;
   quizBox.style.display = 'block';
   instructions.style.display = 'none';
   timerObject = setInterval(function () {
@@ -69,18 +73,19 @@ start.addEventListener("click", function (e) {
     if(timerCount >0){
       timerCount--
     }else{
-      scoreShow()
+      scoreShow();
     }
   },1000)
   console.log(questionsDB);
   displayQuestions();
 });
 
+
 option1.addEventListener("click", checkAnswer);
 option2.addEventListener("click", checkAnswer);
 option3.addEventListener("click", checkAnswer);
 option4.addEventListener("click", checkAnswer);
-// option5.addEventListener("click", checkAnswer);
+option5.addEventListener("click", checkAnswer);
 
 function displayQuestions() {
   quizQuestions.textContent = questionsDB[currentQuestion].title;
@@ -88,7 +93,7 @@ function displayQuestions() {
   option2.textContent = questionsDB[currentQuestion].choices[1];
   option3.textContent = questionsDB[currentQuestion].choices[2];
   option4.textContent = questionsDB[currentQuestion].choices[3]
-  option5.textContent = questions[currentQuestion].choices[4]
+  option5.textContent = questionsDB[currentQuestion].choices[4]
 }
 function checkAnswer() {
   // grab text of button 
@@ -97,30 +102,46 @@ function checkAnswer() {
   if (optionText === questionsDB[currentQuestion].answer) {
     score += 20;
     rightWrong.textContent = "Correct! Great job!"
+ 
     
   }
   else {
     timerCount-=5;
     score -=3;
     rightWrong.textContent = "Wrong answer. "
+  
   }
   if (currentQuestion < questionsDB.length - 1) {
     currentQuestion++;
     displayQuestions();
+
   }
   else {
-      localStorage.setItem('mostRecentScore', score);
+      localStorage.setItem('updatedScore', score);
     scoreShow();
 
   }
+  myScore();
 }
+function myScore() {
+  currentScore.style.display = 'block';
+currentScore.textContent = 'Score:' + score;
+}
+
+
 function scoreShow() {
   clearInterval(timerObject);
   quizBox.style.display = 'none';
+
+
+
+  finalScoreDisplay.style.display = 'block';
   scoreDisplay.style.display = 'block';
+  scoreDisplay.textContent = 'Score:' + score;
   // timerCount.style.display = 'none';
 clearTimer();
 }
+
 
 
 function clearTimer() {
@@ -131,8 +152,7 @@ function clearTimer() {
 
 
 
-
-
+// TODO: ASK how to display the score in this way instead "Score: score"
 
 // TODO: Ensure points system is correct 
 // TODO: Comments
