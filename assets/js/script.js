@@ -64,6 +64,7 @@ let score = 0;
 var timerObject;
 var timerCount = questionsDB.length * 10;
 
+// TODO: DOES EVENT NEED TO HAVE VALUE?
 start.addEventListener("click", function (event) {
   score = 0;
   quizBox.style.display = 'block';

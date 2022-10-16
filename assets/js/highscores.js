@@ -1,7 +1,5 @@
 
-// TODO: 1. Understand the above code, take VERY BRIEF notes on your computer just for COMPREHENSION
-// https://www.w3schools.com/jsref/jsref_sort.asp - READ THIS AND UNDERSTAND
-// TODO: https://www.w3schools.com/jsref/jsref_splice.asp - JUST READ THIS 
+
 // TODO: ADD COMMENTS DO NOT EDIT THE CONTENT, perhaps change max scores and splice! Change sort from arrow function to regular 
 // TODO: function
 // TODO:  2. display high scores
@@ -39,6 +37,9 @@ initialsInput.addEventListener('keyup', function () {
   name: initialsInput.value
  };
  
+ // TODO: 1. Understand the above code, take VERY BRIEF notes on your computer just for COMPREHENSION
+// https://www.w3schools.com/jsref/jsref_sort.asp - READ THIS AND UNDERSTAND
+// TODO: https://www.w3schools.com/jsref/jsref_splice.asp - JUST READ THIS 
  highScores.push(score);
   highScores.sort((a, b) => b.score - a.score);
   highScores.splice(5);
@@ -61,39 +62,23 @@ initialsInput.addEventListener("keypress", function(event) {
   document.getElementById("saveUserScore").click();
     
   }
+})
+
+
+
+  
 
   
 
 
+
+
+
+
+  
+
+
+  
  
-
-});
-
- 
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-  
-
-
-  
-  
-
-//  saveHighScores(event);
-
-//  window.location.assign('/');
-
 
 
