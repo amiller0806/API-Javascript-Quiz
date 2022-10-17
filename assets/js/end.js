@@ -1,20 +1,23 @@
-const NO_OF_HIGH_SCORES = 10;
+// Set max number of high scores as 10 and const variable HIGH_SCORES to highScores
+const MAX_HIGH_SCORES = 10;
 const HIGH_SCORES = 'highScores';
 
-const highScoreString = localStorage.getItem(HIGH_SCORES);
-const highScores = JSON.parse(highScoreString) ?? [];
+// Retrieves high scores from local storage and 
+const stringHighScores = localStorage.getItem(HIGH_SCORES);
+// Parses the high scores, if expression on left is undefined or null, returns expression on the right: an array of high scores
+const highScores = JSON.parse(stringHighScores) ?? [];
+// Getting the DOM element, initials 
 const initialsInput = document.getElementById("initials");
 // TODO: UPDATE SCORE? LIST MAKE IT WORK
 // TODO: COMMENTS
 
 
- 
+// TODO: NEED HELP WITH Update SCore  HELP WITH THIS
 function getNewScore(score) {
 const updatedScore = JSON.parse(localStorage.getItem("updatedScore"));
 if (score > 0 | score < 0) {
   updateScore(score, updatedScore);
 }
-  // showHighScores(); // TODO
 
 };
 
@@ -22,13 +25,14 @@ function updateScore(score, updatedScore) {
   const initials = initialsInput.value;
   const scoreUpdate = { score: updatedScore, initials,};
   updatedScore.push(scoreUpdate, score);
+  // TODO: Can I use myNewScore variable here too ?
 
 }
 
-
+// Checks to see if the score is a high score 
 function checkHighScore(score) {
   const highScores = JSON.parse(localStorage.getItem(HIGH_SCORES)) ?? [];
-  const lowestScore = highScores[NO_OF_HIGH_SCORES - 1]?.score ?? 0;
+  const lowestScore = highScores[MAX_HIGH_SCORES - 1]?.score ?? 0;
   
 
   
@@ -37,27 +41,25 @@ function checkHighScore(score) {
   }
 
 }
-
+// Function to save the high score in local storage
 function saveHighScore(score, highScores) {
-  // const initials = prompt('You got a highscore! Enter initials:');
   const name = initialsInput.value;
-  const newScore = { score, name,};
+  const myNewScore = { score, name,};
   
-  // 1. Add to list
-  highScores.push(newScore);
+  // 1. Add to list of high scores 
+  highScores.push(myNewScore);
 
-
-  // 2. Sort the list
+  // 2. Sort the high scores 
   highScores.sort((a, b) => b.score - a.score);
   
   // 3. Select new list
-  highScores.splice(NO_OF_HIGH_SCORES);
+  highScores.splice(MAX_HIGH_SCORES);
   
   // 4. Save to local storage
   localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
 };
 
-
+// Calling the checkHighScore(score) function
 checkHighScore(score);
 
   

@@ -26,8 +26,7 @@ ul {
 }
 
 
-#instructions h1,
-p {
+#instructions h1 {
   color: darkblue;
 
 }
@@ -70,6 +69,76 @@ p {
 }
 
 
+
+.score-container {
+
+  width: 50%;
+}
+
+
+.my-score {
+  background-color: rgb(165, 232, 255);
+  border: 2px solid;
+  border-color: black;
+  border-width: thick;
+  height: 100px;
+}
+
+
+#timer {
+  background-color: rgb(165, 232, 255);
+  border: 2px solid;
+  border-color: black;
+  border-width: thick;
+  width: 50%;
+
+}
+
+
+#current-score  {
+  padding-top: 12px;
+  font-size: 50px;
+}
+
+
+
+
+#quiz-box{
+margin-top: 60px;
+border: 2px solid;
+padding: 5px;
+border-color: darkblue;
+border-width: thick;
+background-color: rgb(223, 247, 255)
+
+
+}
+
+#questions h3 {
+  font-size: 20px;
+
+}
+#questions {
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+#correct {
+  background-color: rgb(170, 222, 170);
+}
+
+
+
+#incorrect {
+  background-color: rgb(218, 102, 102);
+}
+
+#correct #incorrect  {
+  font-size: 20px;
+  color:black; 
+}
+
+
 /* margin: 7px;
     /* margin-top: 5px; */
 /* padding: 5px;
@@ -77,6 +146,7 @@ padding-bottom: 5px;
 ;
     font-size: 20px;
 
+    
 
 
 /* 

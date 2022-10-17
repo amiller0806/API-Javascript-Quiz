@@ -26,10 +26,10 @@
                         <li>
                             <a href="high-scores.html">View High Scores</a>
                         </li>
-                    
+
 
                         <li>
-                            <a class = "home-btn" href="index.html">Home</a>
+                            <a class="home-btn" href="index.html">Home</a>
                         </li>
                     </ul>
             </div>
@@ -40,7 +40,8 @@
             <section id="instructions">
                 <h1>Instructions</h1>
                 <p>Try to answer the following questions about Javascript within the 50-second time limit.
-                    Note that incorrect answers will penalize your score by 3 and your time by 5 seconds. Good luck!
+                    Note that incorrect answers will penalize your score by 3 points and your time by 5 seconds. Good
+                    luck!
                 </p>
                 <button type="button" class="btn btn-primary" id="start-quiz">Start </button>
             </section>
@@ -48,7 +49,11 @@
             <div class="row">
                 <div class="col-md-8">
                     <section id="quiz-box">
-                        <h2 class="my-score" id="current-score"></h2>
+
+                        <div class="score-container">
+
+                            <h2 class="my-score" id="current-score"></h2>
+                        </div>
                         <h3 id="questions"> Questions</h3>
                         <div class="d-grid gap-2">
 
@@ -60,7 +65,11 @@
                         </div>
                         <br />
 
-                        <p id="right-or-wrong"></p>
+                        <p id="correct"> </p>
+
+                        <p id="incorrect"></p>
+
+                        <!-- <p id="right-or-wrong"></p> -->
                     </section>
                 </div>
 
