@@ -1,3 +1,4 @@
+// TODO: MAKE QUESTIONS YOUR OWN 
 // list of all questions, choices, and answers
 var questionsDB = [
   {
@@ -37,7 +38,7 @@ var questionsDB = [
 
 
 
-
+// list of DOM elements to reference 
 
 var start = document.getElementById('start-quiz');
 var quizBox = document.getElementById('quiz-box');
@@ -56,38 +57,47 @@ const scoreDisplay = document.getElementById('score');
 var finalScoreDisplay = document.getElementById('final-score');
 var currentScore = document.getElementById('current-score');
 var currentQuestion = 0;
+
+
+// On the first page of the quiz, the quiz, final score, and updated score (scoreDisplay) will not be shown
+// Since user has not done the quiz yet, score is 0 at start 
 quizBox.style.display = 'none';
 finalScoreDisplay.style.display = 'none';
 scoreDisplay.style.display = 'none';
 let score = 0;
-
+// introduces timerObject, sets the timer count to 50 seconds, as there are 5 questions, 5x10 is 50
 var timerObject;
 var timerCount = questionsDB.length * 10;
 
-// TODO: DOES EVENT NEED TO HAVE VALUE?
-start.addEventListener("click", function (event) {
+// Sets the start of the quiz with the start event listener for "click" - when user clicks start button
+start.addEventListener("click", function () {
   score = 0;
+  // shows the quiz 
   quizBox.style.display = 'block';
+  // hides the instructions
   instructions.style.display = 'none';
+  // starts the timer 
   timerObject = setInterval(function () {
     timerEl.textContent = "Timer: " + timerCount
+    // if statement - if timer is more than 0, continue decrementing time by 1 or else call the scoreShow() function
     if(timerCount >0){
       timerCount--
     }else{
       scoreShow();
     }
   },1000)
-  console.log(questionsDB);
+  // calls the displayQuestions() function, shows questions
   displayQuestions();
 });
 
-
+// event listeners for option buttons - when clicked, checkANswer function is activated 
 option1.addEventListener("click", checkAnswer);
 option2.addEventListener("click", checkAnswer);
 option3.addEventListener("click", checkAnswer);
 option4.addEventListener("click", checkAnswer);
 option5.addEventListener("click", checkAnswer);
 
+// function to show the quiz questions and choices 
 function displayQuestions() {
   quizQuestions.textContent = questionsDB[currentQuestion].title;
   option1.textContent = questionsDB[currentQuestion].choices[0];
@@ -96,40 +106,51 @@ function displayQuestions() {
   option4.textContent = questionsDB[currentQuestion].choices[3]
   option5.textContent = questionsDB[currentQuestion].choices[4]
 }
+
+// function to check user's answer - if it is correct or incorrect 
 function checkAnswer() {
   // grab text of button 
   var optionText = this.textContent;
-  console.log(optionText);
+
+  // if answer is correct, add 20 points and show message "Correct! Great job!"
   if (optionText === questionsDB[currentQuestion].answer) {
     score += 20;
     rightWrong.textContent = "Correct! Great job!"
  
     
   }
+
+  // Or else, if answer if incorrect decrement time by 5 seconds and score by 3, and show message, "Wrong answer!"
   else {
     timerCount-=5;
     score -=3;
-    rightWrong.textContent = "Wrong answer. "
+    rightWrong.textContent = "Wrong answer! "
   
   }
+
+  // If there are more questions left over, display the next question
   if (currentQuestion < questionsDB.length - 1) {
     currentQuestion++;
     displayQuestions();
 
   }
+
+  // If there are no more questions left over, display the final score
   else {
-      localStorage.setItem('updatedScore', score);
+      localStorage.setItem('updatedScore', 'score');
     scoreShow();
 
   }
   myScore();
 }
+
+// Displays current score 
 function myScore() {
   currentScore.style.display = 'block';
 currentScore.textContent = 'Score:' + score;
 }
 
-
+// Displays final score 
 function scoreShow() {
   clearInterval(timerObject);
   quizBox.style.display = 'none';
@@ -139,7 +160,8 @@ function scoreShow() {
   finalScoreDisplay.style.display = 'block';
   scoreDisplay.style.display = 'block';
   scoreDisplay.textContent = 'Score:' + score;
-  // timerCount.style.display = 'none';
+
+  // When quiz is over, clear timer 
 clearTimer();
 }
 
@@ -151,15 +173,3 @@ function clearTimer() {
 
 
 
-
-
-// TODO: ASK how to display the score in this way instead "Score: score"
-
-// TODO: Ensure points system is correct 
-// TODO: Comments
-
-// TODO: LOCAL STORAGE - save it in script.js, have it in high scores: saving initials and score
-// TODO: Display score 
-//TODO: Add CSS file
-// TODO: Write instructions for quiz
-// TODO: End quiz?
