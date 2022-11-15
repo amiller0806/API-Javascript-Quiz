@@ -2,7 +2,7 @@
 /* if there is no text - initials */
 
 
-header h1 {
+header h1, .top-nav a, .top-nav a.home-btn {
   color: white;
 }
 
@@ -19,10 +19,12 @@ ul {
   padding-top: 5px;
   margin-top: 60px;
 
-  border: 2px solid;
-  border-color: darkblue;
-  ;
 
+
+}
+
+#instructions, #quiz-box {
+  border-color: darkblue;
 }
 
 
@@ -31,13 +33,10 @@ ul {
 
 }
 
-
-#instructions p {
+#instructions p, #questions {
   text-align: left;
-  font-size: 20px;
-
-
 }
+
 
 
 /* Add a black background color to the top navigation */
@@ -46,53 +45,55 @@ ul {
   overflow: hidden;
 }
 
+.top-nav a, h1#finalScore {
+text-align: center;
+}
+
+
 /* Style the links inside the navigation bar */
 .top-nav a {
   float: left;
-  color: #f2f2f2;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
 }
-
+.top-nav a:hover, #quiz-box {
+  background-color: white;
+}
 /* Change the color of links on hover */
-.top-nav a:hover {
-  background-color: #ddd;
+.top-nav a:hover, #correct #incorrect  {
   color: black;
 }
 
 /* Add a color to home link */
 .top-nav a.home-btn {
   background-color: #04AA6D;
-  color: white;
 }
 
 
 
-.score-container {
+.score-container, #timer {
 
   width: 50%;
 }
 
-
-.my-score {
-  background-color: rgb(165, 232, 255);
+.my-score, #timer, #quiz-box {
+border-width: thick;
+}
+.my-score, #timer, #quiz-box, #instructions {
   border: 2px solid;
+}
+
+.my-score, #timer {
+  background-color: rgb(165, 232, 255);
   border-color: black;
-  border-width: thick;
+}
+
+.my-score{
+
   height: 100px;
 }
 
-
-#timer {
-  background-color: rgb(165, 232, 255);
-  border: 2px solid;
-  border-color: black;
-  border-width: thick;
-  width: 50%;
-
-}
 
 
 #current-score  {
@@ -101,25 +102,18 @@ ul {
 }
 
 
-
-
 #quiz-box{
 margin-top: 60px;
-border: 2px solid;
 padding: 5px;
-border-color: darkblue;
-border-width: thick;
-background-color: rgb(223, 247, 255)
 
 
 }
 
-#questions h3 {
+#questions h3, #correct #incorrect, #instructions p   {
   font-size: 20px;
 
 }
 #questions {
-  text-align: left;
   padding-bottom: 20px;
 }
 
@@ -133,27 +127,10 @@ background-color: rgb(223, 247, 255)
   background-color: rgb(218, 102, 102);
 }
 
-#correct #incorrect  {
-  font-size: 20px;
-  color:black; 
-}
 
-
-/* margin: 7px;
-    /* margin-top: 5px; */
-/* padding: 5px;
-padding-bottom: 5px;
-;
-    font-size: 20px;
-
-    
-
-
-/* 
-.highScores {
+h1#finalScore {
+  font-size: 40px;
+  width: 100%;
 
 }
 
-.btn #back-btn {
-
-} */

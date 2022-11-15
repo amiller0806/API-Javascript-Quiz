@@ -12,22 +12,8 @@ const initialsInput = document.getElementById("initials");
 // TODO: COMMENTS
 
 
-// TODO: NEED HELP WITH Update SCore  HELP WITH THIS
-function getNewScore(score) {
-const updatedScore = JSON.parse(localStorage.getItem("updatedScore"));
-if (score > 0 | score < 0) {
-  updateScore(score, updatedScore);
-}
 
-};
 
-function updateScore(score, updatedScore) {
-  const initials = initialsInput.value;
-  const scoreUpdate = { score: updatedScore, initials,};
-  updatedScore.push(scoreUpdate, score);
-  // TODO: Can I use myNewScore variable here too ?
-
-}
 
 // Checks to see if the score is a high score 
 function checkHighScore(score) {

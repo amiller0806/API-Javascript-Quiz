@@ -38,5 +38,23 @@ You are required to submit the following for review:
 
 * The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
 
+
+
+## Screenshots of deployed application on a laptop screen 
+![Screenshot of header, nav bar, & hero image](assets/images/readme-header-navbar-hero.jpg)
+![Screenshot of About Me section](assets/images/readme-aboutme.jpg)
+![Screenshot of Resume section](assets/images/readme-resume.jpg)
+![Screenshot 1 of My Work section](assets/images/readme-mywork-1.jpg)
+![Screenshot 2 of My Work section](assets/images/readme-mywork-2.jpg) 
+![Screenshot of Contact Form](assets/images/readme-contactform.jpg)
+![Screenshot of Footer](assets/images/readme-footer.jpg)
+## Sample view of deployed application on an iPhone 8 screen 
+![Sample view of header, nav bar, hero image, & About Me Section on Iphone 8 screen](assets/images/readme-iphone8-header-hero-aboutme.jpg)
+
+## URL to deployed application
+https://amiller0806.github.io/HTML-Advanced-CSS-Portfolio/ 
+
+## Link to repository
+https://github.com/amiller0806/HTML-Advanced-CSS-Portfolio.git 
 ---
 © 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
