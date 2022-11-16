@@ -1,2 +1,149 @@
-/* https://www.youtube.com/watch?v=o3MF_JmQxYg  - disable submit/save button
-/* if there is no text - initials */
+
+
+header h1, .top-nav a, .top-nav a.home-btn {
+  color: white;
+}
+
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+#instructions {
+  padding: 10px;
+  padding-top: 5px;
+  margin-top: 60px;
+
+
+
+}
+
+#instructions, #quiz-box {
+  border-color: darkblue;
+}
+
+
+#instructions h1 {
+  color: darkblue;
+
+}
+
+#instructions p, #questions {
+  text-align: left;
+}
+
+
+
+/* Add a black background color to the top navigation */
+.top-nav {
+  background-color: #333;
+  overflow: hidden;
+}
+
+.top-nav a, h1#finalScore {
+text-align: center;
+}
+
+
+/* Style the links inside the navigation bar */
+.top-nav a {
+  float: left;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.top-nav a:hover, #quiz-box {
+  background-color: white;
+}
+/* Change the color of links on hover */
+.top-nav a:hover, #correct #incorrect  {
+  color: black;
+}
+
+/* Add a color to home link */
+.top-nav a.home-btn {
+  background-color: #04AA6D;
+}
+
+
+
+.score-container, #timer {
+
+  width: 50%;
+}
+
+.my-score, #timer, #quiz-box {
+border-width: thick;
+}
+.my-score, #timer, #quiz-box, #instructions {
+  border: 2px solid;
+}
+
+.my-score, #timer {
+  background-color: rgb(165, 232, 255);
+  border-color: black;
+}
+
+.my-score{
+
+  height: 100px;
+}
+
+
+
+#current-score  {
+  padding-top: 12px;
+  font-size: 50px;
+}
+
+#quiz-box, ol {
+  padding: 5px;
+}
+
+#quiz-box{
+margin-top: 60px;
+
+}
+
+#questions h3, #correct #incorrect, #instructions p   {
+  font-size: 20px;
+
+}
+#questions {
+  padding-bottom: 20px;
+}
+
+#correct {
+  background-color: rgb(170, 222, 170);
+}
+
+
+
+#incorrect {
+  background-color: rgb(218, 102, 102);
+}
+
+
+h1#finalScore {
+  font-size: 40px;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: darkblue;
+  
+
+}
+
+.btn-success {
+  margin-left: 20px;
+}
+
+ol {
+margin-left: 20px;
+font-size: 20px;
+border: 3px solid red;
+
+}
