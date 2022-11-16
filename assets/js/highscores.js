@@ -1,6 +1,3 @@
-// https://www.youtube.com/watch?v=DFhmNLKwwGw 
-// https://www.youtube.com/watch?v=jfOv18lCMmw
-
 var initialsInput = document.getElementById('initials');
 var saveUserScore = document.getElementById('saveUserScore');
 var finalScore = document.getElementById('final-score');

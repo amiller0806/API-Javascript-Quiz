@@ -10,8 +10,10 @@ highScoresList.innerHTML = highScores
 // https://www.w3schools.com/jsref/jsref_map.asp 
 .map(score => {
     // creates a list of high-scores that has both the username and the user's score 
-    return `<li class="high-score">${score.name}-${score.score}</li>`;
+    return `<li id= "userInitials" class="high-score">${score.name} <li id = "userHighScore" class="high-score"> ${score.score}</li> </li>`;
+
 })
+
 // join () creates and returns new string by concatenating (merging) all elements in high scores list separated by a separator 
 // (in this case bullet points)
 .join("");
