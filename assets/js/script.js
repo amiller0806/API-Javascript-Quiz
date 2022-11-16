@@ -1,4 +1,3 @@
-// TODO: MAKE CORRECT INCORRECT DISAPPEAR AFTER SHOW
 // list of all questions, choices, and answers
 var questionsDB = [
   {
