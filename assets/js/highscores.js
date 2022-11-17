@@ -9,5 +9,4 @@ initialsInput.addEventListener('keyup', function () {
 });
 
 function saveHighScore() {
-  console.log("clicked the save button");
 }
